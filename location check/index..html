@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>where you at </title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <h1> where you at </h1>
+    <br />
+    <p> People get lost sometimes in internet , i will help
+        you find your location </p>
+    <button onclick="getlocation()">Get my location</button>
+    <script>
+        function getlocation() {
+            fetch('http://ip-api.com/json')
+                .then(response => response.json())
+                .then(data => {
+                    let para = document.createElement("P");
+                    para.innerText = "you are located";
+
+                    document.body.appendChild(para);
+
+
+
+
+                    console.log(data)
+                });
+
+        }
+    </script>
+
+</body>
+-
+
+</html>
